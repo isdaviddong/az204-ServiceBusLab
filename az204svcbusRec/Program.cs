@@ -8,7 +8,7 @@ namespace az204svcbusRec
 {
     class Program
     {
-        const string ServiceBusConnectionString = "Endpoint=sb://XXXXXXXXXXXXX.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=fr4XXXXXXXXXXXXXXXXXXX9894=";
+        const string ServiceBusConnectionString = "Endpoint=sb://az204svcbus6151.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=TlNS8Xdc+IdaLdkiBCzM9/VqGowW9UGs4ACzV/lLTOU=";
         const string QueueName = "az204-queue";
         static IQueueClient queueClient;
 
@@ -43,6 +43,9 @@ namespace az204svcbusRec
             // Register the queue message handler and receive messages in a loop
             RegisterOnMessageHandlerAndReceiveMessages();
 
+            Console.WriteLine("======================================================");
+            Console.WriteLine("Press ENTER key to exit ");
+            Console.WriteLine("======================================================");
             Console.ReadKey();
 
             await queueClient.CloseAsync();
